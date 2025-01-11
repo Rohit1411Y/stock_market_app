@@ -46,12 +46,12 @@ class StockRepositoryImpl @Inject constructor(
             }
             catch (e:IOException){
               e.printStackTrace()
-              emit(Resource.Error("Something went wrong"))
+              emit(Resource.Error("Something went wrong", isError = true))
                 null
             }
             catch (e:HttpException){
                e.printStackTrace()
-               emit(Resource.Error("Something went wrong"))
+               emit(Resource.Error("Something went wrong", isError = true))
                 null
             }
 
